@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+quotes_api/.quotes_api.egg-info
+.idea/
+
