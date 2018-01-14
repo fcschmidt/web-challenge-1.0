@@ -1,0 +1,15 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+    <h1>Quote:</h1>
+    <table>
+        <tr>
+            <td>Quote number</td>
+            <td>Quote</td>
+        </tr>
+        <tr style="text-align: center">
+            <td>{{ quote_number }}</td>
+            <td>{{ quote }}</td>
+        </tr>
+    </table>
+{% endblock %}

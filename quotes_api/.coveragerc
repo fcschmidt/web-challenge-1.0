@@ -1,0 +1,3 @@
+[run]
+source = quotes_api
+omit = quotes_api/test*

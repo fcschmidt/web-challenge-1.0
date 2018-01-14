@@ -1,0 +1,15 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+    <h1>Random quote:</h1>
+    <table>
+        <tr>
+            <td>Quote number</td>
+            <td>Quote</td>
+        </tr>
+        <tr style="text-align: center">
+            <td>{{ random_number }}</td>
+            <td>{{ quote }}</td>
+        </tr>
+    </table>
+{% endblock %}
