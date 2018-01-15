@@ -1,4 +1,4 @@
-from lib.consumer_api import ConsumeAPI
+from lib.consumer_api import ConsumerAPI
 from pyramid.view import view_config, view_defaults
 import random
 
@@ -7,7 +7,7 @@ import random
 class QuoteViews:
     def __init__(self, request):
         self.request = request
-        self.api = ConsumeAPI()
+        self.api = ConsumerAPI()
 
     @view_config(renderer='templates/index.jinja2')
     def home(self):
@@ -22,12 +22,11 @@ class QuoteViews:
     def get_quote(self):
         number = self.request.matchdict['quote_number']
         quote = self.api.get_quote(number)
-        return {'quote_number': number, 'quote': quote['quote'], }
+        return {'quote_number': number, 'quote': quote['quote']}
 
     @view_config(route_name='random_quote', renderer='templates/random.jinja2')
     def get_random_quote(self):
-        size = self.api.get_quotes()['quotes']
-        size = len(size)
+        size = len(self.api.get_quotes()['quotes'])
         random_number = random.randint(0, size - 1)
         quote = self.api.get_quote(random_number)
         return {'random_number': random_number, 'quote': quote['quote']}
