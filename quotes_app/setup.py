@@ -16,9 +16,9 @@ tests_require = [
     'pytest-cov',
     ]
 
-setup(name='quotes_api',
+setup(name='quotes_app',
       version='0.0',
-      description='quotes_api',
+      description='quotes_app',
       classifiers=[
           "Programming Language :: Python",
           "Framework :: Pyramid",
@@ -38,6 +38,6 @@ setup(name='quotes_api',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = quotes_api:main
+      main = quotes_app:main
       """,
       )

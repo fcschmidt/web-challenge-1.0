@@ -15,7 +15,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -99,6 +98,6 @@ ENV/
 
 # mypy
 .mypy_cache/
-quotes_api/.quotes_api.egg-info
+quotes_app/.quotes_api.egg-info
 .idea/
 

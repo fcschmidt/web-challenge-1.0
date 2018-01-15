@@ -19,7 +19,7 @@ class ViewTests(unittest.TestCase):
 
 class FunctionalTests(unittest.TestCase):
     def setUp(self):
-        from quotes_api import main
+        from quotes_app import main
         app = main({})
         from webtest import TestApp
         self.testapp = TestApp(app)
