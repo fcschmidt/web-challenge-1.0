@@ -23,9 +23,9 @@ Base = declarative_base()
 
 
 class SessionLogModel(Base):
-    __tablename__ = 'SESSIONS'
+    __tablename__ = 'sessions'
     id = Column(Integer, primary_key=True)
-    uid_session = Column(Text, unique=True)
+    uid_session = Column(Text)
     url_session = Column(Text)
     date = Column(Date, default=datetime.now().date())
     time = Column(Time, default=datetime.now().time())
