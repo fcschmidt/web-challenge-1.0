@@ -1,18 +1,18 @@
-import random
-import time
 import transaction
+import json
+import random
 from pyramid.view import view_config, view_defaults
+from pyramid.response import Response
 
 from lib.consumer_api import ConsumerAPI
 
-from .models.models import DBSession, SessionLogModel
+from .models.models import (
+    DBSession,
+    SessionLogModel
+    )
 
-
-def uid_generator():
-    """Uid generator for a session and return it."""
-    timestamp = "%08x" % time.time()
-    uid_session = '%s%s' % (timestamp, "%016x" % random.getrandbits(128))
-    return uid_session
+from util.uid_generator import uid_generator
+from util.json_util import default
 
 
 def save_session(session, url):
@@ -30,6 +30,7 @@ def save_session(session, url):
 
 @view_defaults(route_name='home')
 class QuoteViews:
+
     def __init__(self, request):
         self.request = request
         self.api = ConsumerAPI()
@@ -60,3 +61,9 @@ class QuoteViews:
         quote = self.api.get_quote(random_number)
         return {'random_number': random_number, 'quote': quote['quote']}
 
+    @view_config(route_name='sessions', renderer='json')
+    def get_sessions(self):
+        query_sessions = DBSession.query(SessionLogModel).all()
+        serialize = [s.object_to_dict() for s in query_sessions]
+        js = json.dumps(serialize, default=default)
+        return Response(json_body=json.loads(js))
