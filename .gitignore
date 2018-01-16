@@ -100,4 +100,4 @@ ENV/
 .mypy_cache/
 quotes_app/.quotes_api.egg-info
 .idea/
-
+quotes_app/sessions.sqlite
