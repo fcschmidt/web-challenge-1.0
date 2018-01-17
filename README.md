@@ -157,6 +157,7 @@ Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 ```
 
 **Resources Detail**
+
 `curl http://localhost:6543/api/sessions/1`
 
 ```json
