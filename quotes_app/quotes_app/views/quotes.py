@@ -1,36 +1,37 @@
-import transaction
 import json
 import random
-from pyramid.view import view_config, view_defaults
+import transaction
 from pyramid.response import Response
+from pyramid.view import view_config, view_defaults
 
 from lib.consumer_api import ConsumerAPI
 
-from .models.models import (
+from util.json_util import default
+from util.uid_generator import uid_generator
+
+from quotes_app.models.models import (
     DBSession,
     SessionLogModel
-    )
-
-from util.uid_generator import uid_generator
-from util.json_util import default
+)
 
 
 def save_session(session, url):
-    """Save a session"""
+    """Function using a save a sessions"""
     if 'id' in session:
         pass
     else:
-        model = SessionLogModel(
-            uid_session=uid_generator(),
-            url_session=url,
-        )
-        DBSession.add(model)
-        transaction.commit()
+        session['id'] = uid_generator()
+
+    model = SessionLogModel(
+        session_uid=session['id'],
+        session_url=url,
+    )
+    DBSession.add(model)
+    transaction.commit()
 
 
 @view_defaults(route_name='home')
 class QuoteViews:
-
     def __init__(self, request):
         self.request = request
         self.api = ConsumerAPI()
@@ -63,7 +64,8 @@ class QuoteViews:
 
     @view_config(route_name='sessions', renderer='json')
     def get_sessions(self):
+        save_session(self.request.session, self.request.current_route_url())
         query_sessions = DBSession.query(SessionLogModel).all()
-        serialize = [s.object_to_dict() for s in query_sessions]
+        serialize = [s.to_json() for s in query_sessions]
         js = json.dumps(serialize, default=default)
         return Response(json_body=json.loads(js))
