@@ -11,8 +11,8 @@ def get_request(url):
 class ConsumerAPI:
 
     def __init__(self):
-        # self.url = 'https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes'
-        self.url = 'http://127.0.0.1:5000/challenge/quotes'
+        self.url = 'https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes'
+        # self.url = 'http://127.0.0.1:5000/challenge/quotes'  # local restful api server
         self.resp = None
 
     def get_quotes(self):
