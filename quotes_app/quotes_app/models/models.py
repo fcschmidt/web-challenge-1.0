@@ -25,16 +25,16 @@ Base = declarative_base()
 class SessionLogModel(Base):
     __tablename__ = 'sessions'
     id = Column(Integer, primary_key=True)
-    uid_session = Column(Text)
-    url_session = Column(Text)
+    session_uid = Column(Text)
+    session_url = Column(Text)
     date = Column(Date, default=datetime.now().date())
     time = Column(Time, default=datetime.now().time())
 
-    def __init__(self, uid_session, url_session):
-        self.uid_session = uid_session
-        self.url_session = url_session
+    def __init__(self, session_uid, session_url):
+        self.session_uid = session_uid
+        self.session_url = session_url
 
-    def object_to_dict(self):
+    def to_json(self):
         dict_ = {
             s.key: getattr(self, s.key) for s in inspect(self).mapper.column_attrs
         }
