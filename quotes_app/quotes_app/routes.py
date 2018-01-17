@@ -1,10 +1,11 @@
-# from .scripts.initializedb import myRootFactory
+# Routes
 
 
 def includeme(config):
     config.add_route('home', '/')
     config.add_route('quotes', '/quotes')
     config.add_route('quote', '/quotes/{quote_number}')
-    config.add_route('random_quote', '/random')
-    # config.add_route('random_quote', '/quotes/random*traverse', factory=myRootFactory)
-    # config.add_route('quotes', '/random', factory='QuoteViews', use_global_views=True)
+    config.add_route('random_quote', '/quotes/random/')
+    config.add_route('sessions', '/sessions/consultas')
+    config.add_route('api_sessions', '/api/sessions')
+    config.add_route('api_sessions_id', '/api/sessions/{id}')
