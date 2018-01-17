@@ -162,11 +162,11 @@ Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 
 ```json
 {
-	"date":"2018-0117",
-	"session_uid":"5a5ebf6538af6f3eb0281eec38e35816bd386fdc",
-	"id":1,
-	"time":"01:21:39.318109",
-	"session_url":"http://localhost:6543/"
+  "date":"2018-0117",
+  "session_uid":"5a5ebf6538af6f3eb0281eec38e35816bd386fdc",
+  "id":1,
+  "time":"01:21:39.318109",
+  "session_url":"http://localhost:6543/"
 }
 ```
 
