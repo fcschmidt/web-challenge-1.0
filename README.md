@@ -48,7 +48,7 @@ Create a python package in the project to perform API queries containing the fol
 - **get_quotes(quote_number):** Query API and return the corresponding quote.
 
 
-##### Routers
+#### Routers
 
 - `/`:  Features simple HTML page containing title "Challenge Web 1.0"
 
@@ -58,16 +58,16 @@ Create a python package in the project to perform API queries containing the fol
 
 - `/quotes/random/`: Display page containing a random quote. Display the number of the generate quote and its corresponding quote.
 
-##### Session creation and logging
+#### Session creation and logging
 Using the framework session mechanism create a unique identifier for all accesses made in the application originated from the same browser.
 
-##### Record accesses to a database
+#### Record accesses to a database
 Using SQLAlchemy + sqlite create template / templates to register:
 
 - Session identifier for each query register.
 - Date, time and page accessed within a session.
 
-##### Create RESTful endpoints for viewing sessions/queries.
+#### Create RESTful endpoints for viewing sessions/queries.
 
 
 
@@ -80,18 +80,21 @@ Application developed using version 3.5 of the [Python](http://), using the [pyr
 
 Configuring the project and installing dependencies
 
-**Download project via git clone**
+**Download project via git clone:**
+
 `$ git clone git@github.com:fcschmidt/web-challenge-1.0.git`
 
-**Accessing the application folder**
+**Accessing the application folder:**
+
 `$ cd web-challenge-1.0/quotes_app`
 
-**Installing and configuring the project**
+**Installing and configuring the project:**
+
 `$ python3 ./setup.py develop`
 
-**Create a Database**
-`$ initialize_quotes_app_db development.ini`
+**Create a Database:**
 
+`$ initialize_quotes_app_db development.ini`
 
 #### Run
 
@@ -103,7 +106,7 @@ View application in [http://localhost:6543/](http://localhost:6543/).
 #### Views endpoints
 
 **View**|**URIs**|**Description**
-:--|:--
+:--|:--|:--
 Home|localhost:6543|Page displays the name of the challenge
 Quotes|localhost:6543/quotes|Page displays all quotes
 Quote|localhost:6543/quotes/{quote_nunmber}|Page displays a quote
@@ -125,7 +128,8 @@ GET|/api/sessions/{id}|Retrieves information detail from a session
 #### Requests
 To make requests via the terminal use the [curl](https://curl.haxx.se/).
 
-In Python scripts use [requests](http://docs.python-requests.org/en/master/). Or, use applications to test example: [Postman](https://www.getpostman.com/) and
+In Python scripts use [requests](http://docs.python-requests.org/en/master/).
+Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 [Insomnia](https://insomnia.rest/?utm_content=bufferd23bb&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer).
 
 **List all resources**
@@ -148,7 +152,7 @@ In Python scripts use [requests](http://docs.python-requests.org/en/master/). Or
         "time": "01:21:39.318109",
         "session_url": "http://localhost:6543/quotes"
     },
-	{...}
+    "{...}"
 ]
 ```
 
