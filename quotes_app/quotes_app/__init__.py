@@ -20,6 +20,6 @@ def main(global_config, **settings):
 
     config.include('pyramid_jinja2')
     config.include('.routes')
-    config.scan('.views')
+    config.scan()
 
     return config.make_wsgi_app()
