@@ -1,12 +1,8 @@
-import json
 import random
 import transaction
-from pyramid.response import Response
 from pyramid.view import view_config, view_defaults
 
 from lib.consumer_api import ConsumerAPI
-
-from util.json_util import default
 from util.uid_generator import uid_generator
 
 from quotes_app.models.models import (
