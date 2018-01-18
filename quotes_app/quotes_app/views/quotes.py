@@ -12,7 +12,7 @@ from quotes_app.models.models import (
 
 
 def save_session(session, url):
-    """Function using a save a sessions"""
+    """Function used to save sessions"""
     if 'id' in session:
         pass
     else:
