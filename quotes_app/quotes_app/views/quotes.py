@@ -61,11 +61,3 @@ class QuoteViews:
         random_number = random.randint(0, size - 1)
         quote = self.api.get_quote(random_number)
         return {'random_number': random_number, 'quote': quote['quote']}
-
-    @view_config(route_name='sessions', renderer='json')
-    def get_sessions(self):
-        save_session(self.request.session, self.request.current_route_url())
-        query_sessions = DBSession.query(SessionLogModel).all()
-        serialize = [s.to_json() for s in query_sessions]
-        js = json.dumps(serialize, default=default)
-        return Response(json_body=json.loads(js))
