@@ -17,13 +17,12 @@ def query_validation(query):
 
 
 class RestApiSessionsViewsTests:
-    def __init__(self, context, request):
-        self.context = context
+    def __init__(self, request):
         self.request = request
         self.session = DBSession()
 
     @view_config(route_name='api_sessions', request_method='GET', renderer='json')
-    def api_get_all_sessions(self):
+    def api_get_sessions(self):
         query_sessions = self.session.query(SessionLogModel).all()
 
         if len(query_sessions) > 0:
@@ -43,7 +42,7 @@ class RestApiSessionsViewsTests:
             )
 
     @view_config(route_name='api_sessions_id', request_method='GET', renderer='json')
-    def apt_get_all_sessions_id(self):
+    def api_get_sessions_id(self):
         get_id = int(self.request.matchdict['id'])
         query = self.session.query(SessionLogModel.id == get_id)
         try:
