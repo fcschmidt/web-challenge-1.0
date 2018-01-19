@@ -9,3 +9,4 @@ def includeme(config):
     config.add_route('sessions', '/sessions/consultas')
     config.add_route('api_sessions', '/api/sessions')
     config.add_route('api_sessions_id', '/api/sessions/{id}')
+    config.add_route('api_sessions_uid', '/api/sessions/uid/{uid}')
