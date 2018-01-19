@@ -1,10 +1,10 @@
 # Web Challenge 1.0
 
-Web Challenge 1.0 - RestFull API with Pyramid
+Web Challenge 1.0 - Consumer and Create RESTful API with Pyramid
 
 
 ## RESTful API Resources
-API available in: [https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes](https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes)
+Consumer API available in: [https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes](https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes)
 
 
 #### Endpoints: HTTP method and URI list
