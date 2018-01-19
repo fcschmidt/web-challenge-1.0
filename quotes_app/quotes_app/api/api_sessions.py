@@ -11,9 +11,14 @@ from quotes_app.models.models import (
 )
 
 
-def query_validation(query):
-    a = [q for q in query][0]
-    return a[0]
+def query_validation(query, value):
+    """
+    Function using validate query
+    :param query:
+    :param value:
+    :return: true or false
+    """
+    return [q for q in query][value - 1]
 
 
 class RestApiSessionsViewsTests:
@@ -46,7 +51,7 @@ class RestApiSessionsViewsTests:
         get_id = int(self.request.matchdict['id'])
         query = self.session.query(SessionLogModel.id == get_id)
         try:
-            answer = query_validation(query)
+            query_validation(query, get_id)
         except IndexError:
             response = {'status': 404, 'message': 'Not Found'}
             return Response(
@@ -55,19 +60,11 @@ class RestApiSessionsViewsTests:
                 status=404,
             )
 
-        if answer is True:
-            query_session = self.session.query(SessionLogModel) \
-                .get(get_id).to_json()
-            response = json.dumps(query_session, default=default)
-            return Response(
-                json_body=json.loads(response),
-                content_type='application/json; charset=UTF-8',
-                status=200,
-            )
-        else:
-            response = {'status': 404, 'message': 'Not Found'}
-            return Response(
-                json_body=response,
-                content_type='application/json; charset=UTF-8',
-                status=404,
-            )
+        query_session = self.session.query(SessionLogModel) \
+            .get(get_id).to_json()
+        response = json.dumps(query_session, default=default)
+        return Response(
+            json_body=json.loads(response),
+            content_type='application/json; charset=UTF-8',
+            status=200,
+        )
