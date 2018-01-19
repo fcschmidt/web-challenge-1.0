@@ -69,7 +69,10 @@ class RestApiSessionsViewsTests:
         try:
             query_validation(query, get_id)
         except IndexError:
-            # List not support len
+            # Raised when a sequence subscript is out of range.
+            # (Slice indices are silently truncated to fall in the allowed range;
+            # if an index is not an integer, TypeError is raised.)
+            # answer replaced by Not Found
             return not_found()
 
         query_session = self.session.query(SessionLogModel).\
