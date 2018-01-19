@@ -7,7 +7,7 @@ Web Challenge 1.0 - RestFull API with Pyramid
 API available in: [https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes](https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes)
 
 
-#### Endpoins: HTTP method and URI list
+#### Endpoints: HTTP method and URI list
 **HTTP method**|**URI path**|**Description**
 :--|:--|:--
 GET|/quotes|Retrieves information all quotes
@@ -103,15 +103,14 @@ Configuring the project and installing dependencies
 View application in [http://localhost:6543/](http://localhost:6543/).
 
 
-#### Views endpoints
+#### Views
 
 **View**|**URIs**|**Description**
 :--|:--|:--
 Home|localhost:6543|Page displays the name of the challenge
 Quotes|localhost:6543/quotes|Page displays all quotes
-Quote|localhost:6543/quotes/{quote_nunmber}|Page displays a quote
+Quote|localhost:6543/quotes/{quote_number}|Page displays a quote
 Random|localhost:6543/quotes/random/|Displays and generates random quotes
-Sessions|localhost:6543/sessions/queries|Page displays all generated session logs
 
 
 ### RESTful API Resources
