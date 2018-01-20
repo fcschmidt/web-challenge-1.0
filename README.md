@@ -173,24 +173,24 @@ Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 **GET /api/sessions/uid/{uid}**
 
 ```bash
-$ curl http://localhost:6543/api/sessions/uid/5a5ebf6538af6f3eb0281eec38e35816bd386fdc
+$ curl http://localhost:6543/api/sessions/uid/5a628b7fc8a9710d0e28eae0582e8426cb8de426
 ```
 
 ```json
 [
     {
+        "date": "2018-01-19",
         "session_url": "http://localhost:6543/",
-        "id": 1,
-        "session_uid": "5a624757d56ecfbd88e2fe10c86493551e09eaee",
-        "time": "17:54:47.316949",
-        "date": "2018-01-19"
+        "session_uid": "5a628b7fc8a9710d0e28eae0582e8426cb8de426",
+        "time": "22:30:16.938474",
+        "id": 1
     },
     {
+        "date": "2018-01-19",
         "session_url": "http://localhost:6543/quotes",
-        "id": 2,
-        "session_uid": "5a624757d56ecfbd88e2fe10c86493551e09eaee",
-        "time": "17:54:47.316949",
-        "date": "2018-01-19"
+        "session_uid": "5a628b7fc8a9710d0e28eae0582e8426cb8de426",
+        "time": "22:30:16.938474",
+        "id": 2
     },
     "{...}"
 ]
