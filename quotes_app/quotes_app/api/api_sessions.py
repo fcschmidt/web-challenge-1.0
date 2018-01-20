@@ -62,7 +62,7 @@ class RestApiSessionsViews:
                 status=200)
 
     @view_config(route_name='api_sessions_id', request_method='GET', renderer='json')
-    def api_get_session_id(self):
+    def api_get_sessions_id(self):
         get_id = int(self.request.matchdict['id'])
         query = self.session.query(SessionLogModel.id == get_id)
 
