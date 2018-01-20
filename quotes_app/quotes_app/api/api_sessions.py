@@ -38,7 +38,7 @@ def not_found():
         status=404)
 
 
-class RestApiSessionsViewsTests:
+class RestApiSessionsViews:
     def __init__(self, request):
         self.request = request
         self.session = DBSession()
