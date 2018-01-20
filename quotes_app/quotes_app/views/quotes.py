@@ -12,11 +12,16 @@ from quotes_app.models.models import (
 
 
 def save_session(session, url):
-    """Function used to save sessions"""
+    """ Function used to save sessions
+
+    Verifies that a uid already exists for active session,
+    if it does not exist, it generates a new one.
+    If it already exists, use the session uid to save the session information...
+    """
     if 'id' in session:
         pass
     else:
-        session['id'] = uid_generator()
+        session['id'] = uid_generator()  # see the useful package /util for information on uid_generator
 
     model = SessionLogModel(
         session_uid=session['id'],
