@@ -3,7 +3,11 @@ import requests
 
 
 def get_request(url):
-    """Request method"""
+    """Request method
+
+    Method used to access the API.
+    Return response
+    """
     response = requests.get(url)
     return response
 
