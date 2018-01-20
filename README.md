@@ -139,18 +139,18 @@ Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 ```json
 [
     {
-        "date": "2018-01-17",
-        "session_uid": "5a5ebf6538af6f3eb0281eec38e35816bd386fdc",
-        "id": 1,
-        "time": "01:21:39.318109",
-        "session_url": "http://localhost:6543/"
+        "date": "2018-01-19",
+        "session_url": "http://localhost:6543/",
+        "session_uid": "5a628b7fc8a9710d0e28eae0582e8426cb8de426",
+        "time": "22:30:16.938474",
+        "id": 1
     },
     {
-        "date": "2018-01-17",
-        "session_uid": "5a5ebf6538af6f3eb0281eec38e35816bd386fdc",
-        "id": 2,
-        "time": "01:21:39.318109",
-        "session_url": "http://localhost:6543/quotes"
+        "date": "2018-01-19",
+        "session_url": "http://localhost:6543/quotes",
+        "session_uid": "5a628b7fc8a9710d0e28eae0582e8426cb8de426",
+        "time": "22:30:16.938474",
+        "id": 2
     },
     "{...}"
 ]
@@ -162,11 +162,11 @@ Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 
 ```json
 {
-  "date":"2018-0117",
-  "session_uid":"5a5ebf6538af6f3eb0281eec38e35816bd386fdc",
-  "id":1,
-  "time":"01:21:39.318109",
-  "session_url":"http://localhost:6543/"
+   "date": "2018-01-19",
+   "session_url": "http://localhost:6543/",
+   "session_uid": "5a628b7fc8a9710d0e28eae0582e8426cb8de426",
+   "time": "22:30:16.938474",
+   "id": 1
 }
 ```
 
