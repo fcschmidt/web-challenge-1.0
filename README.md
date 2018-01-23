@@ -131,6 +131,7 @@ In Python scripts use [requests](http://docs.python-requests.org/en/master/).
 Or, use applications to test example: [Postman](https://www.getpostman.com/) and
 [Insomnia](https://insomnia.rest/?utm_content=bufferd23bb&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer).
 
+#### Using Curl
 
 **GET  /api/sessions**
 
