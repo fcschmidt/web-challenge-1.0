@@ -3,13 +3,12 @@ import transaction
 from pyramid.view import view_config, view_defaults
 
 from lib.consumer_api import ConsumerAPI
+from util.uid_generator import uid_generator
 
 from quotes_app.models.models import (
     DBSession,
     SessionLogModel
     )
-
-from util.uid_generator import uid_generator
 
 
 def save_session(session, url):
